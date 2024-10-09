@@ -4,6 +4,7 @@ const state = {
     enemy: document.querySelector(".enemy"),
     timeLeft: document.querySelector("#time-left"),
     score: document.querySelector("#score"),
+    life: document.querySelector("#life"),
   },
   values: {
     timerId: null,
@@ -11,6 +12,7 @@ const state = {
     hitPosition: 0,
     result: 0,
     currentTime: 60,
+    currentLife: 3,
   },
   actions: {
     countDownTimerId: setInterval(countDown, 1000),
@@ -57,6 +59,16 @@ function addListenerHitBox() {
         state.view.score.textContent = state.values.result;
         state.values.hitPosition = null;
         playSound("hit");
+      } else {
+        state.values.currentLife--;
+        state.view.life.textContent = `X${state.values.currentLife}`;
+        if (state.values.currentLife <= 0) {
+          state.view.life.textContent = "X0";
+          setTimeout(() => {
+            alert("Game Over!");
+            window.location.reload();
+          }, 500);
+        }
       }
     });
   });
