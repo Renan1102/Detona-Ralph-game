@@ -9,6 +9,7 @@ Bem-vindo ao JSGame Detona Ralph! Neste repositório, você encontrará um jogo 
 
 ## Funcionalidades
 - Sistema de Pontuação: Acompanhe sua pontuação à medida que progride no jogo e desafie seus amigos a superá-la, clique no quadrado que o Ralph se encontre.
+- O jogo termina quando o tempo esgotar ou o jogador errar 3 vezes o alvo.
 
 ## Como Jogar
 - Clone este repositório para sua máquina local.
